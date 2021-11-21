@@ -14,7 +14,7 @@ function main() {
     }
 
     update(micInput) {
-      this.height = micInput;
+      this.height = micInput * 1000;
     }
     draw(context) {
       context.fillStyle = this.color;
@@ -39,10 +39,10 @@ function main() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       // generate audio simples from microphone
       const samples = microphone.getSamples();
-      console.log(samples);
+    //   console.log(samples);
       // animate bars based on microphone data
-      bars.forEach(function(bar) {
-        bar.update(1);
+      bars.forEach(function(bar, i) {
+        bar.update(samples[i]);
         bar.draw(ctx);
       });
     }
