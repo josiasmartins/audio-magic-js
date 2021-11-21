@@ -16,12 +16,12 @@ class Microphone {
             });
     }
     getSamples() {
-        this.analyser.getByteTimeDomainDate(this.dataArray);
+        this.analyser.getByteTimeDomainData(this.dataArray);
         let normSamples = [...this.dataArray].map(e => e/128 - 1);
         return normSamples;
     }
     getVolume() {
-        this.analyser.getByteTimeDomainDate(this.dataArray);
+        this.analyser.getByteTimeDomainData(this.dataArray);
         let normSamples = [...this.dataArray].map(e => e/128 - 1);
         let sum = 0;
         for (let i = 0; i < normSamples.length; i++) {

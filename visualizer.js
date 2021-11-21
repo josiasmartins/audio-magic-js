@@ -24,11 +24,11 @@ function main() {
   // const bar1 = new Bar(10, 10, 100, 200, 'blue');
   const microphone = new Microphone();
   let bars = [];
-  let barWidth = canvas.width / 256;
+  let barWidth = canvas.width/256;
   function createBars() {
     for (let i = 0; i < 256; i++) {
-      let color = "hsl(" + i * 2 + ", 100%, 50%)";
-      bars.push(new Bar(i * barWidth, canvas.height / 2, 1, 20, color));
+      let color = 'hsl(' + i * 2 + ', 100%, 50%)';
+      bars.push(new Bar(i * barWidth, canvas.height/2, 1, 20, color));
     }
   }
   createBars();
