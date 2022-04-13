@@ -41,7 +41,7 @@ function main() {
       context.beginPath();
     //   context.moveTo(this.x, this.y);
     //   context.lineTo(this.y, this.height);
-        context.bezierCurveTo(0, 0, this.height, this.height, this.x, this.y * 2);
+        context.bezierCurveTo(100, 0, this.height, this.height, this.x, this.y * 2);
       context.stroke();
 
       context.rotate(this.inder * 0.1);
@@ -53,14 +53,14 @@ function main() {
     }
   }
   // const bar1 = new Bar(10, 10, 100, 200, 'blue');
-  const fftSize = 512;
+  const fftSize = 1024;
   const microphone = new Microphone(fftSize);
   let bars = [];
   let barWidth = canvas.width/(fftSize/2);
   function createBars() {
     for (let i = 0; i < (fftSize/2); i++) {
       let color = 'hsl(' + i * 2 + ', 100%, 50%)';
-      bars.push(new Bar(0 , i * 1.5, 5, 50, color, i));
+      bars.push(new Bar(0 , i * 1.5, 50, 50, color, i));
     }
   }
   createBars();
